@@ -9,11 +9,14 @@
 	$duration: (
 		transitions:		0.2s,
 		menu:				0.5s,
-		fadein:				3s
+		fadein:				1s
 	);
 
 // Size.
 	$size: (
+		font-small:			0.8em,
+		font-medium:		1.0em,
+		font-large:			1.2em,
 		element-height:		2.75em,
 		element-margin:		2em,
 		letter-spacing:		0.075em,
@@ -22,8 +25,9 @@
 
 // Font.
 	$font: (
-		family:				('Open Sans', Helvetica, sans-serif),
-		family-fixed:		('Courier New', monospace),
+		family:				('Lato Regular', Helvetica, sans-serif),
+		family-headline:	('Cera Stencil PRO Bold', Helvetica, sans-serif),
+		family-strapline:	('Trend Sans One', Helvetica, sans-serif),
 		weight:				400,
 		weight-bold:		600,
 		weight-extrabold:	800
@@ -31,8 +35,10 @@
 
 // Palette.
 	$palette: (
-		bg:					#2e3842,
+		bg:					#59c8da,
+		bg-alt:				#414141,
 		fg:					#fff,
+		fg-alt:				#414141,
 		fg-bold:			#fff,
 		fg-light:			rgba(255,255,255,0.5),
 		border:				#fff,

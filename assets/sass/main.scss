@@ -1473,47 +1473,23 @@
 		@include vendor('justify-content', 'center');
 		cursor: default;
 		height: 100vh;
+		background: #59c8da;
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
 
-		h2 {
-			@include vendor('transform', 'scale(1)');
-			@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
-			display: inline-block;
-			font-size: 1.75em;
-			opacity: 1;
-			padding: 0.35em 1em;
+		.inner {
 			position: relative;
-			z-index: 1;
-
-			&:before, &:after {
-				@include vendor('transition', 'width 0.85s ease');
-				@include vendor('transition-delay', '0.25s');
-				background: _palette(fg-bold);
-				content: '';
-				display: block;
-				height: 2px;
-				position: absolute;
-				width: 100%;
-			}
-
-			&:before {
-				top: 0;
-				left: 0;
-			}
-
-			&:after {
-				bottom: 0;
-				right: 0;
-			}
+			width: 100%;
+			max-width: 550px;
+			margin: 0 auto;
+			letter-spacing: -0.025em;
 		}
 
 		p {
-			letter-spacing: _size(letter-spacing-alt);
-			text-transform: uppercase;
-
+			color: _palette(fg-alt);
+			font-size: _size(font-large);
 			a {
 				color: inherit;
 			}
@@ -1588,6 +1564,10 @@
 				display: none;
 			}
 		}
+	}
+
+	.banner__logo {
+		margin: 0 0 40px 0;
 	}
 
 	body.is-loading {
