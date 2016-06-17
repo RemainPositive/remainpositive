@@ -198,13 +198,21 @@
 		text-align: right;
 	}
 
+	.inner {
+		position: relative;
+		width: 100%;
+		max-width: 550px;
+		margin: 0 auto;
+		letter-spacing: -0.025em;
+
+		@include breakpoint(medium) {
+			padding: 0 20px;
+		}
+
+	}
+
 /* Section/Article */
 
-	section, article {
-		&.special {
-			text-align: center;
-		}
-	}
 
 	header {
 		p {
@@ -227,34 +235,25 @@
 		}
 
 		&.major {
-			margin: 0 0 (_size(element-margin) * 1.75) 0;
+			background: _palette(fg);
+			color: _palette(bg);
+			text-align: center;
+
+
 
 			h2, h3, h4, h5, h6 {
+				font-family: _font(family-headline);
 				border-bottom: solid 2px _palette(border);
 				display: inline-block;
-				padding-bottom: 1em;
+				font-size: 2.2em;
+				padding: 1em;
+				margin: 0;
 				position: relative;
-
-				&:after {
-					content: '';
-					display: block;
-					height: 1px;
-				}
-			}
-
-			p {
-				color: _palette(fg);
-				top: 0;
+				color: _palette(bg);
 			}
 
 			@include breakpoint(small) {
-				margin: 0 0 _size(element-margin) 0;
-			}
-		}
-
-		@include breakpoint(medium) {
-			br {
-				display: none;
+				
 			}
 		}
 	}
@@ -495,45 +494,13 @@
 /* Image */
 
 	.image {
-		border-radius: 3px;
-		border: 0;
 		display: inline-block;
-		position: relative;
+		width:100%;
+		border: 0;
 
 		img {
-			border-radius: 3px;
-			display: block;
-		}
-
-		&.left {
-			float: left;
-			margin: 0 2em 2em 0;
-			top: 0.25em;
-		}
-
-		&.right {
-			float: right;
-			margin: 0 0 2em 2em;
-			top: 0.25em;
-		}
-
-		&.left,
-		&.right {
-			max-width: 40%;
-
-			img {
-				width: 100%;
-			}
-		}
-
-		&.fit {
-			display: block;
-			margin: 0 0 _size(element-margin) 0;
 			width: 100%;
-
-			img {
-				width: 100%;
-			}
+			display: block;
 		}
 	}
 
@@ -1209,60 +1176,95 @@
 	}
 
 	.wrapper {
-		@include padding(6em, 0);
-
-		> .inner {
-			width: 60em;
-			margin: 0 auto;
-
-			@include breakpoint(large) {
-				width: 90%;
-			}
-
-			@include breakpoint(medium) {
-				width: 100%;
-			}
-		}
-
-		&.alt {
-			padding: 0;
-		}
-
-		&.style1 {
-			@include wrapper(accent1);
-		}
-
-		&.style2 {
-			background-color: _palette(bg);
-		}
-
-		&.style3 {
-			@include wrapper(accent5);
-		}
-
-		&.style4 {
-			background-color: transparent;
-		}
-
-		&.style5 {
-			@include wrapper(accent7);
-		}
+		background: _palette(bg-alt);
+		padding: 0 0 30px 0;
 
 		@include breakpoint(medium) {
-			@include padding(4em, 3em);
+			
 		}
 
 		@include breakpoint(small) {
-			@include padding(3em, 2em);
+			
 		}
 	}
 
+.share {
+	position: relative;
+	padding: 20px 0;
+
+	.share__options {
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		transition: opacity 0.2s ease-in;
+	}
+
+	&:hover {
+
+		.share__options {
+			opacity: 1;
+			height: auto;
+			overflow: visible;
+		}
+	}
+}
+
+.share__button {
+	cursor: pointer;
+	font-size: 1.4em;
+	text-align: center;
+	position: relative;
+	width: 80%;
+	margin:0 auto;
+	background: #83d6e3;
+	padding: 20px 0;
+	background: -moz-linear-gradient(top,  #83d6e3 0%, #58c7da 5%, #2fa6d5 99%);
+	background: -webkit-linear-gradient(top,  #83d6e3 0%,#58c7da 5%,#2fa6d5 99%);
+	background: linear-gradient(to bottom,  #83d6e3 0%,#58c7da 5%,#2fa6d5 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83d6e3', endColorstr='#2fa6d5',GradientType=0 );
+
+}
+
+.share__options {
+	position: absolute;
+	top: -118px;
+	width: 100%;
+	background: _palette(fg);
+
+	&:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(255, 255, 255, 0);
+		border-top-color: #ffffff;
+		border-width: 20px;
+		margin-left: -20px;
+ 	}
+}
+
+ul.share-buttons{
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  text-align: center;
+}
+
+ul.share-buttons li{
+  display: inline-block;
+  width: 32%;
+  padding: 0;
+}
+
 /* Page Wrapper + Menu */
 
-	#page-wrapper {
+	.page-wrapper {
 		@include vendor('transition', 'opacity #{_duration(menu)} ease');
 		opacity: 1;
-		padding-top: 3em;
 
 		&:before {
 			background: rgba(0,0,0,0);
@@ -1282,7 +1284,7 @@
 		@include vendor('transform', 'translateX(20em)');
 		@include vendor('transition', 'transform #{_duration(menu)} ease');
 		-webkit-overflow-scrolling: touch;
-		background: _palette(accent1, bg);
+		background: #4ab4c5;
 		color: _palette(accent1, fg-bold);
 		height: 100%;
 		max-width: 80%;
@@ -1479,13 +1481,7 @@
 		position: relative;
 		text-align: center;
 
-		.inner {
-			position: relative;
-			width: 100%;
-			max-width: 550px;
-			margin: 0 auto;
-			letter-spacing: -0.025em;
-		}
+
 
 		p {
 			color: _palette(fg-alt);
@@ -1548,17 +1544,9 @@
 		}
 
 		@include breakpoint(small) {
-			@include padding(7em, 3em);
+			padding: 40px 20px;
 			height: auto;
 			min-height: 0;
-
-			h2 {
-				font-size: 1.25em;
-			}
-
-			br {
-				display: none;
-			}
 
 			.more {
 				display: none;
@@ -1594,49 +1582,8 @@
 
 /* CTA */
 
-	#cta {
-		.inner {
-			@include vendor('display', 'flex');
-			max-width: 45em;
-
-			header {
-				@include vendor('order', '1');
-				padding-right: 3em;
-				width: 70%;
-
-				p {
-					color: inherit;
-				}
-			}
-
-			.actions {
-				@include vendor('order', '2');
-				width: 30%;
-			}
-
-			@include breakpoint(medium) {
-				display: block;
-				text-align: center;
-
-				header {
-					padding-right: 0;
-					width: 100%;
-				}
-
-				.actions {
-					margin-left: auto;
-					margin-right: auto;
-					max-width: 20em;
-					width: 100%;
-				}
-			}
-
-			@include breakpoint(small) {
-				.actions {
-					max-width: none;
-				}
-			}
-		}
+	.cta {
+		padding: 40px 0;
 	}
 
 /* Main */
@@ -1784,17 +1731,7 @@
 
 	body.is-mobile {
 		&.landing {
-			#page-wrapper {
-				background: none;
-			}
 
-			#banner,
-			.wrapper.style4 {
-				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: cover;
-			}
 
 			#footer {
 				background-color: darken(_palette(bg), 8);

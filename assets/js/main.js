@@ -52,11 +52,15 @@
 			});
 
 		// Scrolly.
-			$('.scrolly')
+			$('.sc')
 				.scrolly({
 					speed: 1500,
 					offset: $header.outerHeight()
 				});
+
+			$( ".sc" ).click(function( event ) {
+  				event.preventDefault();
+			});
 
 		// Menu.
 			$('#menu')
