@@ -1904,13 +1904,16 @@ button:disabled,
 }
 
 .share .share__options {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
   transition: opacity 0.2s ease-in;
 }
 
-.share:hover .share__options {
+.hide {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.show {
   opacity: 1;
   height: auto;
   overflow: visible;

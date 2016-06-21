@@ -96,3 +96,44 @@
 	});
 
 })(jQuery);
+
+
+    $( ".js__button_1" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_1").toggleClass( "hide" );
+    });
+
+
+    $( ".js__button_2" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_2").toggleClass( "hide" );
+    });
+
+
+    $( ".js__button_3" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_3").toggleClass( "hide" );
+    });
+
+
+    $( ".js__button_4" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_4").toggleClass( "hide" );
+    });
+
+
+    $( ".js__button_5" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_5").toggleClass( "hide" );
+    });
+
+
+    $( ".js__button_6" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_6").toggleClass( "hide" );
+    });
+
+    $( ".js__button_7" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_7").toggleClass( "hide" );
+    });
