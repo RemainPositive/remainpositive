@@ -137,3 +137,23 @@
       event.preventDefault();
       $(".js__options_7").toggleClass( "hide" );
     });
+
+    $( ".js__button_8" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_8").toggleClass( "hide" );
+    });
+
+    $( ".js__button_9" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_9").toggleClass( "hide" );
+    });
+
+    $( ".js__button_10" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_10").toggleClass( "hide" );
+    });
+
+    $( ".js__button_11" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_11").toggleClass( "hide" );
+    });
