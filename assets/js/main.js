@@ -157,3 +157,28 @@
       event.preventDefault();
       $(".js__options_11").toggleClass( "hide" );
     });
+
+    $( ".js__button_12" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_12").toggleClass( "hide" );
+    });
+
+    $( ".js__button_13" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_13").toggleClass( "hide" );
+    });
+
+    $( ".js__button_14" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_14").toggleClass( "hide" );
+    });
+
+    $( ".js__button_15" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_15").toggleClass( "hide" );
+    });
+
+    $( ".js__button_16" ).on( "click", function( event ) {
+      event.preventDefault();
+      $(".js__options_16").toggleClass( "hide" );
+    });
